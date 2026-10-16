@@ -131,3 +131,26 @@
 ### Assistant Response
 * Synchronized local changes, updated `CHAT_HISTORY.md`, and pushed to `main` at `https://github.com/veldalim/haze-tracker.git`.
 
+---
+
+## Turn 7: Standard /api Serverless Folder Provisioning
+
+### User Request
+> add a serverless endpoint API connection that pulls live data from data.gov.sg using the following endpoint:
+> 
+> GET https://api-open.data.gov.sg/v2/real-time/api/two-hr-forecast
+> 
+> 1. store this in /api folder in the project root level, NOT the src folder  
+> 2. include /health.ts and /psi.ts within the same subfolder  
+> 3. there is no key required for this service  
+
+### Assistant Response
+* Created the standard root `/api` folder with:
+  * `/api/two-hr-forecast.ts` (and alias `/api/forecast.ts`) querying `https://api-open.data.gov.sg/v2/real-time/api/two-hr-forecast`
+  * `/api/psi.ts` querying `https://api-open.data.gov.sg/v2/real-time/api/psi`
+  * `/api/health.ts` health status handler
+  * `/api/index.ts` central route directory
+* Validated live executions with tsx (47 Singapore forecast areas and active national PSI).
+* Committed and pushed to `main` at `https://github.com/veldalim/haze-tracker.git`.
+
+
